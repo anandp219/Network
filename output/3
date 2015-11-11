@@ -1,0 +1,158 @@
+tcp_ip is: 127.0.0.3
+own id:347
+****New Pred is 127.0.0.3:6666
+****New Succ is 127.0.0.3:6666
+multicastSend has beend done
+json is: {"tcp_port": 6666, "type": "BOTH", "tcp_ip": "127.0.0.3"}
+{u'tcp_port': 6666, u'type': u'PRED', u'tcp_ip': u'127.0.0.4'}
+THis is the tcp data i have been jear
+('172.27.22.186', 60363)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.1'}
+incoming id:865
+ ***
+yop
+{u'tcp_port': 6666, u'type': u'PRED', u'tcp_ip': u'127.0.0.4'}
+***
+yahan pe desh ea
+ {sds incoming id:154 347u'tcp_port': 6666
+, u'type': u'SUCC'****New Pred is 127.0.0.4:6666
+, u'tcp_ip': u'127.0.0.1'}
+THis is the tcp data i have been jear
+sent ACK for the PRED req from 127.0.0.4:6666
+ ***
+{u'tcp_port': 6666, u'type': u'SUCC', u'tcp_ip': u'127.0.0.1'}
+***
+yahan pe desh ea
+incoming id: sdsdsd 865 347
+****New Succ is 127.0.0.1:6666
+ yop
+sent ACK for the SUCC req from 127.0.0.1:6666
+('172.27.22.186', 35438)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.5'}
+multicastSend has beend done
+ incoming id:61
+json is: {"tcp_port": 6666, "type": "PING", "tcp_ip": "127.0.0.3"}
+ ('172.27.22.186', 42627)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4'}
+{u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.5'}
+ incoming id:154
+ ('172.27.22.186', 37412)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.3'}
+OOPS!
+incoming id:347
+Recieved Own Multicast
+ ('172.27.22.186', 44368)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.1'}
+incoming id:865
+OOPS!
+{u'tcp_port': 6666, u'type': u'SUCC', u'tcp_ip': u'127.0.0.5'}
+THis is the tcp data i have been jear
+***
+ yop
+{u'tcp_port': 6666, u'type': u'SUCC', u'tcp_ip': u'127.0.0.5'}
+***
+yahan pe desh ea
+incoming id: sdsdsd 61 865
+This cannot become my successor
+('172.27.22.186', 36751)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.2'}
+multicastSend has beend done
+json is: {"tcp_port": 6666, "type": "PING", "tcp_ip": "127.0.0.3"}
+('172.27.22.186', 43830)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.3'}
+incoming id:16
+{u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.2'}
+('172.27.22.186', 48018)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.1'}
+incoming id:347
+Recieved Own Multicast
+incoming id:865
+OOPS!
+('172.27.22.186', 41514)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.5'}
+incoming id:61
+ OOPS!
+('172.27.22.186', 43312)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4'}
+incoming id:154
+OOPS!
+{u'tcp_port': 6666, u'type': u'SUCC', u'tcp_ip': u'127.0.0.2'}
+THis is the tcp data i have been jear
+***
+ yop
+{u'tcp_port': 6666, u'type': u'SUCC', u'tcp_ip': u'127.0.0.2'}
+***
+yahan pe desh ea
+incoming id: sdsdsd 16 865
+This cannot become my successor
+('172.27.22.186', 50828)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.6'}
+multicastSend has beend done
+ incoming id:556
+json is: {"tcp_port": 6666, "type": "PING", "tcp_ip": "127.0.0.3"}
+Establishing connection with 127.0.0.6:6666 for SUCC
+('172.27.22.186', 33531)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.3'}
+('172.27.22.186', 34616)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.5'}
+incoming id:347
+ incoming id:61
+Recieved Own Multicast
+OOPS!Unable to send {'tcp_port': 6666, 'type': 'PRED', 'tcp_ip': '127.0.0.3'} to 127.0.0.6:6666
+
+Sent Establishing data to the broadcaster 127.0.0.6:6666
+('172.27.22.186', 45057)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4'}
+incoming id:154
+OOPS!
+('172.27.22.186', 54775)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.2'}
+incoming id:16
+OOPS!
+('172.27.22.186', 37476)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.1'}
+incoming id:865
+OOPS!
+{u'tcp_port': 6666, u'type': u'ACK_PRED', u'tcp_ip': u'127.0.0.6'}
+THis is the tcp data i have been jear
+***
+ yop
+{u'tcp_port': 6666, u'type': u'ACK_PRED', u'tcp_ip': u'127.0.0.6'}
+***
+yahan pe desh ea
+hggh hgh 
+****New Succ is 127.0.0.6:6666
+Succ sdhs ACK recieved from 127.0.0.6:6666
+chord table ---------------------
+0 : {'tcp_port': 6666, 'distance': 209, 'tcp_ip': u'127.0.0.6', 'id': 556}
+1 : {'tcp_port': 6666, 'distance': 209, 'tcp_ip': u'127.0.0.6', 'id': 556}
+2 : {'tcp_port': 6666, 'distance': 209, 'tcp_ip': u'127.0.0.6', 'id': 556}
+3 : {'tcp_port': 6666, 'distance': 209, 'tcp_ip': u'127.0.0.6', 'id': 556}
+4 : {'tcp_port': 6666, 'distance': 209, 'tcp_ip': u'127.0.0.6', 'id': 556}
+5 : {'tcp_port': 6666, 'distance': 209, 'tcp_ip': u'127.0.0.6', 'id': 556}
+6 : {'tcp_port': 6666, 'distance': 209, 'tcp_ip': u'127.0.0.6', 'id': 556}
+7 : {'tcp_port': 6666, 'distance': 209, 'tcp_ip': u'127.0.0.6', 'id': 556}
+8 : {'tcp_port': 6666, 'distance': 518, 'tcp_ip': u'127.0.0.1', 'id': 865}
+9 : {'tcp_port': 6666, 'distance': 518, 'tcp_ip': u'127.0.0.1', 'id': 865}
+ this is the chord_table_iterator ---------------------
+----------------------------------
+{u'file_src_ip': u'127.0.0.1', u'file_name': u'a.out', u'type': u'GET_CHORD', u'file_id': 438, u'file_src_port': 6667}
+THis is the tcp data i have been jear
+***
+ yop
+{u'file_src_ip': u'127.0.0.1', u'file_name': u'a.out', u'type': u'GET_CHORD', u'file_id': 438, u'file_src_port': 6667}
+***
+yahan pe desh ea
+347 -1 ----------++++++++++++++++ss
+File will be uploaded from here  347
+share/347/a.out
+{u'file_src_ip': u'127.0.0.1', u'file_name': u'a.out', u'type': u'GET_CHORD', u'file_id': 438, u'file_src_port': 6667}
+sdsd yahan se file 
+sender has been closed
+Sender has already been closed
+59417
+finally bind
+Done Sending
+file has be sent
+{u'file_src_ip': u'127.0.0.1', u'file_name': u'2.jpg', u'type': u'GET_CHORD', u'file_id': 448, u'file_src_port': 6667}
+THis is the tcp data i have been jear
+***
+ yop
+{u'file_src_ip': u'127.0.0.1', u'file_name': u'2.jpg', u'type': u'GET_CHORD', u'file_id': 448, u'file_src_port': 6667}
+***
+yahan pe desh ea
+347 -1 ----------++++++++++++++++ss
+File will be uploaded from here  347
+share/347/2.jpg
+{u'file_src_ip': u'127.0.0.1', u'file_name': u'2.jpg', u'type': u'GET_CHORD', u'file_id': 448, u'file_src_port': 6667}
+sdsd yahan se file 
+sender has been closed
+Sender has already been closed
+59130
+finally bind
+Done Sending
+file has be sent
