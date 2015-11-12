@@ -13,10 +13,10 @@ import random
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(levelname)s] (%(threadName)-10s) %(message)s',
                     )
-# random.seed(7)
+
 
 MCAST_GRP_LIST = ['224.1.1.1','224.1.1.2','224.1.1.3','224.1.1.4','224.1.1.5']
-MCAST_GRP = MCAST_GRP_LIST[int((random.randint(1,1000))%2)]
+MCAST_GRP = MCAST_GRP_LIST[int((random.random())*2)]
 PARENT_MCAST_GRP = '224.1.1.6'
 MCAST_PORT = 5007
 BUFSIZE = 8192   
@@ -39,9 +39,6 @@ chord_table ={}
 parent_chord_table ={}
 listenerSocket=None
 
-def getDistance(first,second):
-	return int((first -second+ pow(2,N))%pow(2,N))
-
 #todo hanldle the case when we have on;y 2 nodes
 #todo handle multple ppl claiming to be my successor
 def getHashedId(ip,port):
@@ -49,7 +46,7 @@ def getHashedId(ip,port):
 	return hash(address)%1024
 
 def check_chord_table():
-	time.sleep(20)
+	time.sleep(30)
 	print "MULTICAST Group", MCAST_GRP
 	print "chord table ---------------------"
 	for x in chord_table:
@@ -140,7 +137,7 @@ def main():
 	# else:
 
 def parentmulticastSend():
-	time.sleep(10)
+	time.sleep(20)
 	multicastSend('BOTH','parent')
 
 def join():
@@ -223,14 +220,17 @@ def establishConnect(typ,ip,port):
 	# else:
 	# 	print "OOPS1!"
 
+def getDistance(first,second):
+	return int((first -second+ pow(2,N))%pow(2,N))
+
 def populateFingerTable(index,incomingId,data,distance,finger_table,flag):
 	# global chord_table
-	# if flag == 'parent':
-	# 	for key in finger_table:
-	# 		if finger_table[key]['id']!=-1:
-	# 			if distance > finger_table[key]['distance']:
-	# 				return
-		
+	if flag == 'parent':
+		for key in finger_table:
+			if finger_table[key]['id']!=-1:
+				if distance > finger_table[key]['distance']:
+					return
+
 
 	for x in range(index,-1,-1):
 		if finger_table[x]['id'] !=-1 and distance > finger_table[x]['distance'] :
@@ -240,68 +240,53 @@ def populateFingerTable(index,incomingId,data,distance,finger_table,flag):
 			finger_table[x]['tcp_port']=int(data['tcp_port'])
 			finger_table[x]['tcp_ip']=data['tcp_ip']
 			finger_table[x]['distance']=int(distance)
-	if flag!='parent':
-		for key in parent_chord_table:
-			if parent_chord_table[key]['id'] != -1:
-				if parent_chord_table[key]['distance'] > distance:
-					finger_table[x]['id'] = -1 #int(incomingId)
-					finger_table[x]['tcp_port']=""#int(data['tcp_port'])
-					finger_table[x]['tcp_ip']=""#data['tcp_ip']
-					finger_table[x]['distance']=-1#int(distance)
-
-		#update the paren+chord+table
 	# if data['type'] !='PING':
 	# 	multicastSend('PING')
-# def parent_chord_implementor(incomingId,data,finger_table):
-# 	distance = getDistance(incomingId,own_id)
-# 	found = True
-# 	for key in chord_table:
-# 		if chord_table[key]['id'] != -1:
-# 			di=getDistance(chord_table[key]['id'],own_id)
-# 			if di < distance:
-# 				found = False
-# 				break
-# 	if found:
-# 		probableIndex = int(math.floor(math.log(distance,2)))
-# 		if finger_table[probableIndex]['id'] == -1 :
-# 			populateFingerTable(probableIndex,incomingId, data,distance,finger_table,'parent')
-# 		else:
-# 			oldDistance = finger_table[probableIndex]['distance']
-# 			if oldDistance > distance:
-# 				populateFingerTable(probableIndex,incomingId,data,distance,finger_table,'parent')
-# 	# if flag=='parent':
-# 	if data['type']!='PING':
-# 		#here flag='parent'
-# 		parentMulticastSendThread= threading.Thread(name='parentMulticastSend', target=multicastSend,args=('PING','parent',))
-# 		parentMulticastSendThread.start()
-		# else:
+def parent_chord_implementor(incomingId,data,finger_table):
+	distance = getDistance(incomingId,own_id)
+	found = True
+	for key in chord_table:
+		if chord_table[key]['id'] != -1:
+			di=getDistance(chord_table[key]['id'],own_id)
+			if di < distance:
+				found = False
+				break
+	if found:
+		probableIndex = int(math.floor(math.log(distance,2)))
+		if finger_table[probableIndex]['id'] == -1 :
+			populateFingerTable(probableIndex,incomingId, data,distance,finger_table,'parent')
+		else:
+			oldDistance = finger_table[probableIndex]['distance']
+			if oldDistance > distance:
+				populateFingerTable(probableIndex,incomingId,data,distance,finger_table,'parent')
 		
-def chord_implementor(data):
+def chord_implementor(data,finger_table,flag):
 	print "data is ",data
-	flag='own'
-	# if flag == 'parent' and data['MCAST_GRP'] == MCAST_GRP:
-	# 	return
+	if flag == 'parent' and data['MCAST_GRP'] == MCAST_GRP:
+		return
 	incomingId = getHashedId(data['tcp_ip'],data['tcp_port'])
 
+	if flag == 'parent':
+		parent_chord_implementor(incomingId,data,finger_table)
+		return
 	if incomingId == own_id:
 		return 
-
-	# if flag == 'parent':
-	# 	parent_chord_implementor(incomingId,data,finger_table)
-	# 	return
-
 	distance = getDistance(incomingId,own_id)
 	print "distance is bhaiyo ",distance," with id = ",data
 	probableIndex = int(math.floor(math.log(distance,2)))
-	if chord_table[probableIndex]['id'] == -1 :
-		populateFingerTable(probableIndex,incomingId, data,distance,chord_table,flag)
+	if finger_table[probableIndex]['id'] == -1 :
+		populateFingerTable(probableIndex,incomingId, data,distance,finger_table,flag)
 	else:
-		oldDistance = chord_table[probableIndex]['distance']
+		oldDistance = finger_table[probableIndex]['distance']
 		if oldDistance > distance:
-			populateFingerTable(probableIndex,incomingId,data,distance,chord_table,flag)
+			populateFingerTable(probableIndex,incomingId,data,distance,finger_table,flag)
 	if data['type']!='PING':
-		multicastSendThread= threading.Thread(name='multicastSend', target=multicastSend,args=('PING',flag,))
-		multicastSendThread.start()
+		if flag=='parent':
+			parentMulticastSendThread= threading.Thread(name='parentMulticastSend', target=multicastSend,args=('PING',flag,))
+			parentMulticastSendThread.start()
+		else:
+			multicastSendThread= threading.Thread(name='multicastSend', target=multicastSend,args=('PING',flag,))
+			multicastSendThread.start()
 		# pass# multicastSend('PING')	
 
 
@@ -319,42 +304,13 @@ def chord_implementor(data):
 	# 	max_val['tcp_ip'] = data['tcp_ip']
 	# 	max_val['tcp_port'] = data['tcp_port']
 
-def parentProcessor(data):
-	global parent_chord_table
-	print "data is ",data
-	if data['MCAST_GRP'] == MCAST_GRP:
-		return
-	incomingId = getHashedId(data['tcp_ip'],data['tcp_port'])
 
-	if incomingId == own_id:
-		return 
-	
-	distance = getDistance(incomingId,own_id)
-	found = True
-	for key in chord_table:
-		if chord_table[key]['id'] != -1:
-			if chord_table[key]['distance'] < distance:
-				found = False
-				break
-	if found:
-		probableIndex = int(math.floor(math.log(distance,2)))
-		if parent_chord_table[probableIndex]['id'] == -1 :
-			populateFingerTable(probableIndex,incomingId, data,distance,parent_chord_table,'parent')
-		else:
-			oldDistance = parent_chord_table[probableIndex]['distance']
-			if oldDistance > distance:
-				populateFingerTable(probableIndex,incomingId,data,distance,parent_chord_table,'parent')
-	# if flag=='parent':
-	if data['type']!='PING':
-		#here flag='parent'
-		parentMulticastSendThread= threading.Thread(name='parentMulticastSend', target=multicastSend,args=('PING','parent',))
-		parentMulticastSendThread.start()
-	# if flag == 'parent':
-	# parent_chord_implementor(incomingId,data,finger_table)
-	# return
+
+
+
 
 def processRecievedMulticast(data):
-	chord_implementor(data)
+	chord_implementor(data,chord_table,'own')
 	#data['type'] represents the type required by the other node
 	global pred_id,own_id,succ_id
 	address=data['tcp_ip']+":"+str(data['tcp_port'])
@@ -396,11 +352,9 @@ def processRecievedMulticast(data):
 	else:	
 		print "OOPS!"
 	return
-
 def processRecievedParentMulticast(data):
 	# pass# global parent_chord_table
-	parentProcessor(data)
-	# chord_implementor(data,parent_chord_table,'parent')	
+	chord_implementor(data,parent_chord_table,'parent')	
 
 def parentmulticastListen():
 	sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
@@ -416,6 +370,8 @@ def parentmulticastListen():
 		print (str(sender) + '  ' + repr(data)) 
   		processMulticastDataThread= threading.Thread(name='processRecievedParentMulticast', target=processRecievedParentMulticast,args=(data,))
 		processMulticastDataThread.start()
+
+
 
 def multicastListen():
 	sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
@@ -447,7 +403,6 @@ def multicastSend(messageType,flag='own'):
 	h["tcp_ip"]=tcp_ip
 	h["tcp_port"]=tcp_port
 	h['type']=messageType
-	
 	h['MCAST_GRP']= MCAST_GRP
 
 	# h["text"]="robot"
@@ -572,13 +527,12 @@ def processTcpData(data):
 					print "Done Receiving"
 					c.close()
 		elif messageType == 'PUT_CHORD':
-			flag_alpha = 'own'
 			file_id = data['file_id']
-			dest_id = -1
+			dest_id = own_id
 			dest_key = -1
 			if file_id >= own_id:
 				for key in chord_table:
-					if chord_table[key]['id'] != - 1 and chord_table[key]['id'] <= file_id and  chord_table[key]['id']>own_id:
+					if chord_table[key]['id'] != - 1 and chord_table[key]['id'] <= file_id:
 						dest_id = chord_table[key]['id']
 						dest_key = key			
 					else:
@@ -596,19 +550,17 @@ def processTcpData(data):
 					max = -1
 					for key in chord_table:
 						if chord_table[key]['id'] > max  and chord_table[key]['id'] > own_id:
-							max = chord_table[key]['id']
 							dest_id = chord_table[key]['id']
 							dest_key = key
-				# if dest_id == -1:
-				# 	dest_id = own_id
-
-			temp_id = -1
-			temp_key = -1
-			if file_id != own_id :
+				if dest_id == -1:
+					dest_id = own_id
+			if file_id != own_id and dest_id == -1:
+				temp_id = -1
+				temp_key = -1
 				if file_id >= own_id:
-					for key in parent_chord_table:
+					for key in chord_table:
 						if parent_chord_table[key]['id'] != - 1 and \
-						parent_chord_table[key]['id'] <= file_id and  parent_chord_table[key]['id']>own_id:
+						parent_chord_table[key]['id'] <= file_id:
 							temp_id = parent_chord_table[key]['id']
 							temp_key = key			
 						else:
@@ -627,26 +579,12 @@ def processTcpData(data):
 						for key in parent_chord_table:
 							if parent_chord_table[key]['id'] > max  and \
 							parent_chord_table[key]['id'] > own_id:
-								max = parent_chord_table[key]['id']
 								temp_id = parent_chord_table[key]['id']
 								temp_key = key
-
-			if dest_id == -1 and temp_id == -1:
-				dest_id = own_id
-			elif dest_id == -1:
+					if temp_id == -1:
+						temp_id = own_id
 				dest_id = temp_id
 				dest_key = temp_key
-				flag_alpha = 'parent'
-			elif temp_id == -1:
-				pass
-			else:
-				d1 = getDistance(dest_id,file_id)
-				d2 = getDistance(temp_id,file_id)
-				if d1 > d2:
-					dest_id = temp_id
-					dest_key = temp_key
-					flag_alpha = 'parent' 
-				
 
 
 			print dest_id,dest_key,"----------++++++++++++++++ss"
@@ -682,36 +620,13 @@ def processTcpData(data):
 					f.close()
 					print "Done Receiving"
 					s.close()
-			else:
-				print "file download has been forwarded to ",dest_id
-				sender = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-				flag = True
-				while flag:
-					try:
-						if flag_alpha == 'own':
-							print "same chord "
-							sender.connect((chord_table[dest_key]['tcp_ip'],chord_table[dest_key]['tcp_port']))
-						else:
-							print "parent chord "
-							sender.connect((parent_chord_table[dest_key]['tcp_ip'],parent_chord_table[dest_key]['tcp_port']))	
-						sender.send(json.dumps(data))
-						sender.close()
-						flag=False
-					except:
-						print "Unable to send "+ repr(data) +" to "+str(dest_id)+":"
-
 		elif messageType == 'GET_CHORD':
-
-
-#------------------------------------------------------------------------------
-
-			flag_alpha = 'own'
 			file_id = data['file_id']
-			dest_id = -1
+			dest_id = own_id
 			dest_key = -1
 			if file_id >= own_id:
 				for key in chord_table:
-					if chord_table[key]['id'] != - 1 and chord_table[key]['id'] <= file_id and  chord_table[key]['id']>own_id:
+					if chord_table[key]['id'] != - 1 and chord_table[key]['id'] <= file_id:
 						dest_id = chord_table[key]['id']
 						dest_key = key			
 					else:
@@ -729,57 +644,10 @@ def processTcpData(data):
 					max = -1
 					for key in chord_table:
 						if chord_table[key]['id'] > max  and chord_table[key]['id'] > own_id:
-							max = chord_table[key]['id']
 							dest_id = chord_table[key]['id']
 							dest_key = key
-				# if dest_id == -1:
-				# 	dest_id = own_id
-
-			temp_id = -1
-			temp_key = -1
-			if file_id != own_id :
-				if file_id >= own_id:
-					for key in parent_chord_table:
-						if parent_chord_table[key]['id'] != - 1 and \
-						parent_chord_table[key]['id'] <= file_id and  parent_chord_table[key]['id']>own_id:
-							temp_id = parent_chord_table[key]['id']
-							temp_key = key			
-						else:
-							break
-				else:
-					temp_id = -1
-					temp_key = -1
-					for key in parent_chord_table:
-						if parent_chord_table[key]['id'] != - 1 and parent_chord_table[key]['id'] < own_id and \
-						parent_chord_table[key]['id'] <= file_id:
-							if parent_chord_table[key]['id'] > temp_id :
-								temp_id = parent_chord_table[key]['id']
-								temp_key = key
-					if temp_id == -1:
-						max = -1
-						for key in parent_chord_table:
-							if parent_chord_table[key]['id'] > max  and \
-							parent_chord_table[key]['id'] > own_id:
-								max = parent_chord_table[key]['id']
-								temp_id = parent_chord_table[key]['id']
-								temp_key = key
-
-			if dest_id == -1 and temp_id == -1:
-				dest_id = own_id
-			elif dest_id == -1:
-				dest_id = temp_id
-				dest_key = temp_key
-				flag_alpha = 'parent'
-			elif temp_id == -1:
-				pass
-			else:
-				d1 = getDistance(dest_id,file_id)
-				d2 = getDistance(temp_id,file_id)
-				if d1 > d2:
-					dest_id = temp_id
-					dest_key = temp_key
-					flag_alpha = 'parent' 
-				
+				if dest_id == -1:
+					dest_id = own_id
 
 
 			print dest_id,dest_key,"----------++++++++++++++++ss"
@@ -794,10 +662,6 @@ def processTcpData(data):
 					print "file is not there "
 					sendData='NACK_FILE'
 					tcpSend(sendData,data['file_src_ip'],data['file_src_port'])
-				# if os.path.isfile(path):
-				# 	print "file is there "
-				# 	sendData='NACK_FILE'
-				# 	tcpSend(sendData,data['file_src_ip'],data['file_src_port'])
 				else:
 					sendData='ACK_FILE'
 					port_me=tcpFileSend(sendData,data['file_src_ip'],data['file_src_port'])
@@ -824,142 +688,19 @@ def processTcpData(data):
 					s.shutdown(socket.SHUT_WR)
 					s.close()
 					print "file has be sent"
-					# sendData='ACK_FILE'
-					# port_me=tcpFileSend(sendData,data['file_src_ip'],data['file_src_port'])
-					# print port_me
-					# f = open('share/'+str(own_id)+"/"+data['file_name'],'wb')
-					# s = socket.socket(socket.AF_INET,socket.SOCK_STREAM) 
-					# #s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-					# s.bind((tcp_ip, (port_me+1)))
-					# print "finally bind"
-					# s.listen(5)
-					# c, addr = s.accept()
-					# print 'Got connection from', addr
-					# print "Receiving..."
-					# l = c.recv(1024)
-					# while (l):
-					# 	print "Receiving..."
-					# 	f.write(l)
-					# 	l = c.recv(1024)
-					# f.close()
-					# print "Done Receiving"
-					# s.close()
+	
 			else:
 				print "file download has been forwarded to ",dest_id
 				sender = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 				flag = True
 				while flag:
 					try:
-						if flag_alpha == 'own':
-							print "same chord "
-							sender.connect((chord_table[dest_key]['tcp_ip'],chord_table[dest_key]['tcp_port']))
-						else:
-							print "parent chord "
-							sender.connect((parent_chord_table[dest_key]['tcp_ip'],parent_chord_table[dest_key]['tcp_port']))	
+						sender.connect((chord_table[dest_key]['tcp_ip'],chord_table[dest_key]['tcp_port']))
 						sender.send(json.dumps(data))
 						sender.close()
 						flag=False
 					except:
 						print "Unable to send "+ repr(data) +" to "+str(dest_id)+":"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#------------------------------------------------------------------------------------------
-
-
-			# file_id = data['file_id']
-			# dest_id = own_id
-			# dest_key = -1
-			# if file_id >= own_id:
-			# 	for key in chord_table:
-			# 		if chord_table[key]['id'] != - 1 and chord_table[key]['id'] <= file_id:
-			# 			dest_id = chord_table[key]['id']
-			# 			dest_key = key			
-			# 		else:
-			# 			break
-			# else:
-			# 	dest_id = -1
-			# 	dest_key = -1
-			# 	for key in chord_table:
-			# 		if chord_table[key]['id'] != - 1 and chord_table[key]['id'] < own_id and \
-			# 		chord_table[key]['id'] <= file_id:
-			# 			if chord_table[key]['id'] > dest_id :
-			# 				dest_id = chord_table[key]['id']
-			# 				dest_key = key
-			# 	if dest_id == -1:
-			# 		max = -1
-			# 		for key in chord_table:
-			# 			if chord_table[key]['id'] > max  and chord_table[key]['id'] > own_id:
-			# 				dest_id = chord_table[key]['id']
-			# 				dest_key = key
-			# 	if dest_id == -1:
-			# 		dest_id = own_id
-
-
-			# print dest_id,dest_key,"----------++++++++++++++++ss"
-			# if dest_id == own_id :
-			# 	print "File will be uploaded from here ",dest_id
-			# 	file_name=data['file_name']
-			# 	path="share/"+str(own_id)+"/"+file_name
-			# 	print path
-			# 	print data
-			# 	sendData='NACK_FILE'
-			# 	if not os.path.isfile(path):
-			# 		print "file is not there "
-			# 		sendData='NACK_FILE'
-			# 		tcpSend(sendData,data['file_src_ip'],data['file_src_port'])
-			# 	else:
-			# 		sendData='ACK_FILE'
-			# 		port_me=tcpFileSend(sendData,data['file_src_ip'],data['file_src_port'])
-			# 		print port_me
-					
-			# 		s = socket.socket(socket.AF_INET,socket.SOCK_STREAM) 
-			# 		#s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-			# 		s.bind((tcp_ip, (port_me+1)))
-			# 		print "finally bind"
-			# 		flag=True
-			# 		while flag:
-			# 			try:
-			# 				s.connect((data['file_src_ip'],data['file_src_port']))
-			# 				flag=False
-			# 			except:
-			# 				pass
-			# 		f = open('share/'+str(own_id)+"/"+data['file_name'],'rb')
-			# 		l = f.read(1024)
-			# 		while (l):
-			# 			s.send(l)
-			# 			l = f.read(1024)
-			# 		f.close()
-			# 		print "Done Sending"
-			# 		s.shutdown(socket.SHUT_WR)
-			# 		s.close()
-			# 		print "file has be sent"
-	
-			# else:
-			# 	print "file download has been forwarded to ",dest_id
-			# 	sender = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-			# 	flag = True
-			# 	while flag:
-			# 		try:
-			# 			sender.connect((chord_table[dest_key]['tcp_ip'],chord_table[dest_key]['tcp_port']))
-			# 			sender.send(json.dumps(data))
-			# 			sender.close()
-			# 			flag=False
-			# 		except:
-			# 			print "Unable to send "+ repr(data) +" to "+str(dest_id)+":"
 			
 
 

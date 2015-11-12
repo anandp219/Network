@@ -3,139 +3,151 @@ own id:154
 ****New Pred is 127.0.0.4:6666
 ****New Succ is 127.0.0.4:6666
 multicastSend has beend done
-json is: {"tcp_port": 6666, "type": "BOTH", "tcp_ip": "127.0.0.4"}
-('172.27.22.186', 52934)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.1'}
-multicastSend has beend done
- json is: {"tcp_port": 6666, "type": "PING", "tcp_ip": "127.0.0.4"}
-incoming id:865
-Establishing connection with 127.0.0.1:6666 for SUCC
-('172.27.22.186', 44532)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4'}
-Sent Establishing data to the broadcaster 127.0.0.1:6666
- Establishing connection with 127.0.0.1:6666 for PRED
+json is: {"tcp_port": 6666, "type": "BOTH", "tcp_ip": "127.0.0.4", "MCAST_GRP": "224.1.1.2"}
+I am listening
+('192.168.200.106', 35154)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.3', u'MCAST_GRP': u'224.1.1.2'}
+data is  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.3', u'MCAST_GRP': u'224.1.1.2'}
+distance is bhaiyo  193  with id =  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.3', u'MCAST_GRP': u'224.1.1.2'}
+incoming id:347
+ multicastSend has beend done
+Establishing connection with 127.0.0.3:6666 for SUCC
+json is: {"tcp_port": 6666, "type": "PING", "tcp_ip": "127.0.0.4", "MCAST_GRP": "224.1.1.2"}
+('192.168.200.106', 40154)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4', u'MCAST_GRP': u'224.1.1.2'}
+Sent Establishing data to the broadcaster 127.0.0.3:6666
+Establishing connection with 127.0.0.3:6666 for PRED
+ data is  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4', u'MCAST_GRP': u'224.1.1.2'}
 incoming id:154
 Recieved Own Multicast
- Sent Establishing data to the broadcaster 127.0.0.1:6666
-{u'tcp_port': 6666, u'type': u'ACK_PRED', u'tcp_ip': u'127.0.0.1'}
+Sent Establishing data to the broadcaster 127.0.0.3:6666
+{u'tcp_port': 6666, u'type': u'ACK_PRED', u'tcp_ip': u'127.0.0.3'}
 THis is the tcp data i have been jear
 ***
- {u'tcp_port': 6666, u'type': u'ACK_PRED', u'tcp_ip': u'127.0.0.1'}
+ {u'tcp_port': 6666, u'type': u'ACK_PRED', u'tcp_ip': u'127.0.0.3'}
 yop
 ***
 yahan pe desh ea
-hggh hgh 
-****New Succ is 127.0.0.1:6666
-Succ sdhs ACK recieved from 127.0.0.1:6666
-{u'tcp_port': 6666, u'type': u'ACK_SUCC', u'tcp_ip': u'127.0.0.1'}
+ {hggh hgh 
+u'tcp_port': 6666****New Succ is 127.0.0.3:6666
+, u'type': u'ACK_SUCC', Succ sdhs ACK recieved from 127.0.0.3:6666
+u'tcp_ip': u'127.0.0.3'}
 THis is the tcp data i have been jear
 ***
- {u'tcp_port': 6666, u'type': u'ACK_SUCC', u'tcp_ip': u'127.0.0.1'}
+ {u'tcp_port': 6666, u'type': u'ACK_SUCC', u'tcp_ip': u'127.0.0.3'}
 yop
 ***
 yahan pe desh ea
 jhhh  hjh 
-****New Pred is 127.0.0.1:6666
-Pred ACK djs recieved from 127.0.0.1:6666
-('172.27.22.186', 52877)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.3'}
-incoming id:347
-Establishing connection with 127.0.0.3:6666 for SUCC
- multicastSend has beend done
-json is: {"tcp_port": 6666, "type": "PING", "tcp_ip": "127.0.0.4"}
-('172.27.22.186', 33575)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4'}
-Sent Establishing data to the broadcaster 127.0.0.3:6666
-incoming id:154
-Recieved Own Multicast
-('172.27.22.186', 60363)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.1'}
-incoming id:865
-OOPS!
-{u'tcp_port': 6666, u'type': u'ACK_PRED', u'tcp_ip': u'127.0.0.3'}
-THis is the tcp data i have been jear
-yop
- ***
-{u'tcp_port': 6666, u'type': u'ACK_PRED', u'tcp_ip': u'127.0.0.3'}
-***
-yahan pe desh ea
-hggh hgh 
-****New Succ is 127.0.0.3:6666
-Succ sdhs ACK recieved from 127.0.0.3:6666
-('172.27.22.186', 35438)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.5'}
+****New Pred is 127.0.0.3:6666
+Pred ACK djs recieved from 127.0.0.3:6666
+('192.168.200.106', 37267)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.5', u'MCAST_GRP': u'224.1.1.2'}
+data is  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.5', u'MCAST_GRP': u'224.1.1.2'}
+distance is bhaiyo  931  with id =  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.5', u'MCAST_GRP': u'224.1.1.2'}
+multicastSend has beend done
+json is: {"tcp_port": 6666, "type": "PING", "tcp_ip": "127.0.0.4", "MCAST_GRP": "224.1.1.2"}
+('192.168.200.106', 47655)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4', u'MCAST_GRP': u'224.1.1.2'}
 incoming id:61
- multicastSend has beend done
-{u'tcp_port': json is: {"tcp_port": 6666, "type": "PING", "tcp_ip": "127.0.0.4"}
-6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.5'}
-('172.27.22.186', 42627)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4'}
+Establishing connection with 127.0.0.5:6666 for SUCC
+Sent Establishing data to the broadcaster 127.0.0.5:6666
+Establishing connection with 127.0.0.5:6666 for PRED
+Sent Establishing data to the broadcaster 127.0.0.5:6666
+data is  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4', u'MCAST_GRP': u'224.1.1.2'}
 incoming id:154
-('172.27.22.186', 37412)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.3'}
 Recieved Own Multicast
+('192.168.200.106', 52920)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.3', u'MCAST_GRP': u'224.1.1.2'}
+data is  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.3', u'MCAST_GRP': u'224.1.1.2'}
+distance is bhaiyo  193  with id =  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.3', u'MCAST_GRP': u'224.1.1.2'}
 incoming id:347
 OOPS!
- ('172.27.22.186', 44368)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.1'}
-incoming id:865
-OOPS!
-{u'tcp_port': 6666, u'type': u'PRED', u'tcp_ip': u'127.0.0.5'}
+{u'tcp_port': 6666, u'type': u'ACK_PRED', u'tcp_ip': u'127.0.0.5'}
 THis is the tcp data i have been jear
 yop
  ***
-{u'tcp_port': 6666, u'type': u'PRED', u'tcp_ip': u'127.0.0.5'}
+{u'tcp_port': 6666, u'type': u'ACK_PRED', u'tcp_ip': u'127.0.0.5'}
+ {***
+u'tcp_port': 6666yahan pe desh ea
+, u'type'hggh hgh 
+: u'ACK_SUCC', u'tcp_ip': u'127.0.0.5'}
+THis is the tcp data i have been jear
+yop
+ ***
+{u'tcp_port': 6666, u'type': u'ACK_SUCC', u'tcp_ip': u'127.0.0.5'}
 ***
 yahan pe desh ea
-sds incoming id:61 347
+jhhh  hjh 
 ****New Pred is 127.0.0.5:6666
-{u'tcp_port': sent ACK for the PRED req from 127.0.0.5:6666
-6666, u'type': u'SUCC', u'tcp_ip': u'127.0.0.5'}
-THis is the tcp data i have been jear
-***
- {u'tcp_port': 6666, u'type': u'SUCC', u'tcp_ip': u'127.0.0.5'}
-yop
-***
-yahan pe desh ea
-incoming id: sdsdsd 61 347
-This cannot become my successor
-('172.27.22.186', 36751)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.2'}
-('172.27.22.186', 43830)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.3'}
+Pred ACK djs recieved from 127.0.0.5:6666
+('192.168.200.106', 42742)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.1', u'MCAST_GRP': u'224.1.1.2'}
+data is  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.1', u'MCAST_GRP': u'224.1.1.2'}
+distance is bhaiyo  711  with id =  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.1', u'MCAST_GRP': u'224.1.1.2'}
+incoming id:865
+ ('192.168.200.106', 54477)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.3', u'MCAST_GRP': u'224.1.1.2'}
+{u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.1', u'MCAST_GRP': u'224.1.1.2'}
+ multicastSend has beend done
+json is: {"tcp_port": 6666, "type": "PING", "tcp_ip": "127.0.0.4", "MCAST_GRP": "224.1.1.2"}
+data is  {u'tcp_port': ('192.168.200.106', 51818)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.5', u'MCAST_GRP': u'224.1.1.2'}
+6666, u'type': u'PING', u'tcp_ip': u'127.0.0.3', u'MCAST_GRP': u'224.1.1.2'}
+distance is bhaiyo  193  with id =  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.3', u'MCAST_GRP': u'224.1.1.2'}
 incoming id:347
 OOPS!
-('172.27.22.186', 48018)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.1'}
-incoming id:865
- incoming id:16
- ('172.27.22.186', 41514)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.5'}
-{u'tcp_port': OOPS!6666
- , u'type': u'BOTH', u'tcp_ip': u'127.0.0.2'}
-multicastSend has beend done
-json is: {"tcp_port": 6666, "type": "PING", "tcp_ip": "127.0.0.4"}
-('172.27.22.186', 43312)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4'}
- incoming id:61
- incoming id:154
-OOPS!
-Recieved Own Multicast
-{u'tcp_port': 6666, u'type': u'SUCC', u'tcp_ip': u'127.0.0.2'}
-THis is the tcp data i have been jear
-***
-{u'tcp_port': 6666, u'type': u'SUCC', u'tcp_ip': u'127.0.0.2'}
-***
-yahan pe desh ea
-incoming id: sdsdsd 16 347yop
+data is  {u'tcp_port': 6666('192.168.200.106', 46383)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4', u'MCAST_GRP': u'224.1.1.2'}
+, u'type': u'PING', u'tcp_ip': u'127.0.0.5'data is  {u'tcp_port': 6666, u'MCAST_GRP': u'224.1.1.2'}, u'type': u'PING'
+, u'tcp_ip': u'127.0.0.4'distance is bhaiyo  931, u'MCAST_GRP':  u'224.1.1.2' with id =  {}u'tcp_port': 6666, 
+u'type': u'PING', u'tcp_ip'incoming id:154: u'127.0.0.5', u'MCAST_GRP': u'224.1.1.2'}
 
-This cannot become my successor
-('172.27.22.186', 50828)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.6'}
-multicastSend has beend done
-json is: {"tcp_port": 6666, "type": "PING", "tcp_ip": "127.0.0.4"}
-('172.27.22.186', 33531)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.3'}
-incoming id:556
- incoming id:347
- ('172.27.22.186', 34616)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.5'}
-OOPS!
-{u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.6'}
 incoming id:61
- ('172.27.22.186', 45057)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4'}
-OOPS!
-incoming id:154
 Recieved Own Multicast
-('172.27.22.186', 54775)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.2'}
-incoming id:16
 OOPS!
-('172.27.22.186', 37476)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.1'}
-incoming id:865
-OOPS!
+multicastSend has beend done
+json is: {"tcp_port": 6666, "type": "BOTH", "tcp_ip": "127.0.0.4", "MCAST_GRP": "224.1.1.2"}
+('192.168.200.106', 38993)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.4', u'MCAST_GRP': u'224.1.1.2'}
+data is  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.4', u'MCAST_GRP': u'224.1.1.2'}
+('192.168.200.106', 55733)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.2', u'MCAST_GRP': u'224.1.1.1'}
+data is  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.2', u'MCAST_GRP': u'224.1.1.1'}
+('192.168.200.106', 52391)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.6', u'MCAST_GRP': u'224.1.1.1'}
+data is  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.6', u'MCAST_GRP': u'224.1.1.1'}
+('192.168.200.106', 55051)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.3', u'MCAST_GRP': u'224.1.1.2'}
+data is  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.3', u'MCAST_GRP': u'224.1.1.2'}
+('192.168.200.106', 55487)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.2', u'MCAST_GRP': u'224.1.1.1'}
+data is  {u'tcp_port': ('192.168.200.106', 41990)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.6', u'MCAST_GRP': u'224.1.1.1'}
+6666, u'type': u'PING', u'tcp_ip': u'127.0.0.2', u'MCAST_GRP': u'224.1.1.1'}
+data is  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.6', u'MCAST_GRP': u'224.1.1.1'}
+('192.168.200.106', 40273)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.5', u'MCAST_GRP': u'224.1.1.2'}
+data is  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.5', u'MCAST_GRP': u'224.1.1.2'}
+('192.168.200.106', 54288)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.6', u'MCAST_GRP': u'224.1.1.1'}
+data is  {u'tcp_port'('192.168.200.106', 53918)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.2', u'MCAST_GRP': u'224.1.1.1'}
+: 6666data is  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.6', u'MCAST_GRP': u'224.1.1.1'}
+, u'type': u'PING', u'tcp_ip': u'127.0.0.2', u'MCAST_GRP': u'224.1.1.1'}
+('192.168.200.106', 59979)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.2', u'MCAST_GRP': u'224.1.1.1'}
+data is  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.2', u'MCAST_GRP': u'224.1.1.1'}
+('192.168.200.106', 48907)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.1', u'MCAST_GRP': u'224.1.1.2'}
+data is  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.1', u'MCAST_GRP': u'224.1.1.2'}
+multicastSend has beend done
+json is: {"tcp_port": 6666, "type": "PING", "tcp_ip": "127.0.0.4", "MCAST_GRP": "224.1.1.2"}
+('192.168.200.106', 51252)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4', u'MCAST_GRP': u'224.1.1.2'}
+data is  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4', u'MCAST_GRP': u'224.1.1.2'}
+('192.168.200.106', 49889)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.5', u'MCAST_GRP': u'224.1.1.2'}
+('192.168.200.106', 50067)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.3', u'MCAST_GRP': u'224.1.1.2'}
+data is  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.3', u'MCAST_GRP': u'224.1.1.2'}
+data is  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.5', u'MCAST_GRP': u'224.1.1.2'}
+('192.168.200.106', 36202)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.6', u'MCAST_GRP': u'224.1.1.1'}
+('192.168.200.106', 59075)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.1', u'MCAST_GRP': u'224.1.1.2'}
+data is  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.6', u'MCAST_GRP': u'224.1.1.1'}
+data is  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.1', u'MCAST_GRP': u'224.1.1.2'}
+('192.168.200.106', 46505)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.5', u'MCAST_GRP': u'224.1.1.2'}
+data is  {u'tcp_port'multicastSend has beend done
+json is: {"tcp_port": 6666, "type": "PING", "tcp_ip": "127.0.0.4", "MCAST_GRP": "224.1.1.2"}
+: 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.5', u'MCAST_GRP': ('192.168.200.106', 54071)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.3', u'MCAST_GRP': u'224.1.1.2'}
+('192.168.200.106', 39458)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4', u'MCAST_GRP': u'224.1.1.2'}
+u'224.1.1.2'}
+data is  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.3', u'MCAST_GRP': u'224.1.1.2'}
+data is  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.4', u'MCAST_GRP': u'224.1.1.2'}
+('192.168.200.106', 39872)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.1', u'MCAST_GRP': u'224.1.1.2'}
+data is  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.1', u'MCAST_GRP': u'224.1.1.2'}
+ ('192.168.200.106', 43229)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.6', u'MCAST_GRP': u'224.1.1.1'}
+data is  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.6', u'MCAST_GRP': u'224.1.1.1'}
+('192.168.200.106', 33983)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.2', u'MCAST_GRP': u'224.1.1.1'}
+data is  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.2', u'MCAST_GRP': u'224.1.1.1'}
+MULTICAST Group 224.1.1.2
 chord table ---------------------
 0 : {'tcp_port': 6666, 'distance': 193, 'tcp_ip': u'127.0.0.3', 'id': 347}
 1 : {'tcp_port': 6666, 'distance': 193, 'tcp_ip': u'127.0.0.3', 'id': 347}
@@ -145,55 +157,100 @@ chord table ---------------------
 5 : {'tcp_port': 6666, 'distance': 193, 'tcp_ip': u'127.0.0.3', 'id': 347}
 6 : {'tcp_port': 6666, 'distance': 193, 'tcp_ip': u'127.0.0.3', 'id': 347}
 7 : {'tcp_port': 6666, 'distance': 193, 'tcp_ip': u'127.0.0.3', 'id': 347}
-8 : {'tcp_port': 6666, 'distance': 402, 'tcp_ip': u'127.0.0.6', 'id': 556}
+8 : {'tcp_port': 6666, 'distance': 711, 'tcp_ip': u'127.0.0.1', 'id': 865}
 9 : {'tcp_port': 6666, 'distance': 711, 'tcp_ip': u'127.0.0.1', 'id': 865}
  this is the chord_table_iterator ---------------------
 ----------------------------------
-{u'file_src_ip': u'127.0.0.1', u'file_name': u'ftpm.sh', u'type': u'GET_CHORD', u'file_id': 245, u'file_src_port': 6667}
+Parent chord table ---------------------
+0 : {'tcp_port': '', 'tcp_ip': '', 'id': -1}
+1 : {'tcp_port': '', 'tcp_ip': '', 'id': -1}
+2 : {'tcp_port': '', 'tcp_ip': '', 'id': -1}
+3 : {'tcp_port': '', 'tcp_ip': '', 'id': -1}
+4 : {'tcp_port': '', 'tcp_ip': '', 'id': -1}
+5 : {'tcp_port': '', 'tcp_ip': '', 'id': -1}
+6 : {'tcp_port': '', 'tcp_ip': '', 'id': -1}
+7 : {'tcp_port': '', 'tcp_ip': '', 'id': -1}
+8 : {'tcp_port': '', 'tcp_ip': '', 'id': -1}
+9 : {'tcp_port': '', 'tcp_ip': '', 'id': -1}
+ this is the chord_table_iterator ---------------------
+----------------------------------
+{u'file_src_ip': u'127.0.0.4', u'file_name': u'2.pdf', u'type': u'GET_CHORD', u'file_id': 423, u'file_src_port': 8907}
 THis is the tcp data i have been jear
 ***
-{u'file_src_ip': u'127.0.0.1', u'file_name': u'ftpm.sh', u'type': u'GET_CHORD', u'file_id': 245, u'file_src_port': 6667}
-***
-yahan pe desh ea
-154 -1 ----------++++++++++++++++ss
-File will be uploaded from here  154
-share/154/ftpm.sh
-{u'file_src_ip': u'127.0.0.1', u'file_name': u'ftpm.sh', u'type': u'GET_CHORD', u'file_id': 245, u'file_src_port': 6667}
-yop
- sdsd yahan se file 
-sender has been closed
-Sender has already been closed
-46846
-finally bind
-Done Sending
-file has be sent
-{u'file_src_ip': u'127.0.0.1', u'file_name': u'a.out', u'type': u'GET_CHORD', u'file_id': 438, u'file_src_port': 6667}
-THis is the tcp data i have been jear
-***
- {u'file_src_ip': u'127.0.0.1', u'file_name': u'a.out', u'type': u'GET_CHORD', u'file_id': 438, u'file_src_port': 6667}
+ {u'file_src_ip': u'127.0.0.4', u'file_name': u'2.pdf', u'type': u'GET_CHORD', u'file_id': 423, u'file_src_port': 8907}
 yop
 ***
 yahan pe desh ea
 347 7 ----------++++++++++++++++ss
 file download has been forwarded to  347
-{u'file_src_ip': u'127.0.0.1', u'file_name': u'2.jpg', u'type': u'GET_CHORD', u'file_id': 448, u'file_src_port': 6667}
+same chord 
+{u'file_src_ip': u'127.0.0.4', u'file_name': u'2.jpg', u'type': u'GET_CHORD', u'file_id': 448, u'file_src_port': 8907}
+THis is the tcp data i have been jear
+***
+ {u'file_src_ip': u'127.0.0.4', u'file_name': u'2.jpg', u'type': u'GET_CHORD', u'file_id': 448, u'file_src_port': 8907}
+yop
+***
+yahan pe desh ea
+347 7 ----------++++++++++++++++ss
+file download has been forwarded to  347
+same chord 
+{u'file_src_ip': u'127.0.0.4', u'file_name': u'2.jpg', u'type': u'GET_CHORD', u'file_id': 448, u'file_src_port': 8907}
 THis is the tcp data i have been jear
 ***
  yop
-{u'file_src_ip': u'127.0.0.1', u'file_name': u'2.jpg', u'type': u'GET_CHORD', u'file_id': 448, u'file_src_port': 6667}
+{u'file_src_ip': u'127.0.0.4', u'file_name': u'2.jpg', u'type': u'GET_CHORD', u'file_id': 448, u'file_src_port': 8907}
 ***
 yahan pe desh ea
 347 7 ----------++++++++++++++++ss
 file download has been forwarded to  347
-{u'file_src_ip': u'127.0.0.1', u'file_name': u'sub.py', u'type': u'GET_CHORD', u'file_id': 339, u'file_src_port': 6667}
+same chord 
+{u'file_src_ip': u'127.0.0.4', u'file_name': u'2.jpg', u'type': u'PUT_CHORD', u'file_id': 448, u'file_src_port': 8907}
 THis is the tcp data i have been jear
-yop
- ***
-{u'file_src_ip': u'127.0.0.1', u'file_name': u'sub.py', u'type': u'GET_CHORD', u'file_id': 339, u'file_src_port': 6667}
+***yop
+
+{u'file_src_ip': u'127.0.0.4', u'file_name': u'2.jpg', u'type': u'PUT_CHORD', u'file_id': 448, u'file_src_port': 8907}
 ***
 yahan pe desh ea
-154 -1 ----------++++++++++++++++ss
-File will be uploaded from here  154
-share/154/sub.py
-{u'file_src_ip': u'127.0.0.1', u'file_name': u'sub.py', u'type': u'GET_CHORD', u'file_id': 339, u'file_src_port': 6667}
-file is not there 
+347 7 ----------++++++++++++++++ss
+file download has been forwarded to  347
+same chord 
+{u'file_src_ip': u'127.0.0.4', u'file_name': u'none.l', u'type': u'PUT_CHORD', u'file_id': 958, u'file_src_port': 8907}
+THis is the tcp data i have been jear
+***
+ yop
+{u'file_src_ip': u'127.0.0.4', u'file_name': u'none.l', u'type': u'PUT_CHORD', u'file_id': 958, u'file_src_port': 8907}
+***
+yahan pe desh ea
+865 9 ----------++++++++++++++++ss
+file download has been forwarded to  865
+same chord 
+{u'file_src_ip': u'127.0.0.4', u'file_name': u'12.pdf', u'type': u'PUT_CHORD', u'file_id': 579, u'file_src_port': 8907}
+THis is the tcp data i have been jear
+***
+ {u'file_src_ip': u'127.0.0.4', u'file_name': u'12.pdf', u'type': u'PUT_CHORD', u'file_id': 579, u'file_src_port': 8907}
+yop
+***
+yahan pe desh ea
+347 7 ----------++++++++++++++++ss
+file download has been forwarded to  347
+same chord 
+{u'file_src_ip': u'127.0.0.4', u'file_name': u'12.pdf', u'type': u'PUT_CHORD', u'file_id': 579, u'file_src_port': 8907}
+THis is the tcp data i have been jear
+***
+{u'file_src_ip': u'127.0.0.4', u'file_name': u'12.pdf', u'type': u'PUT_CHORD', u'file_id': 579, u'file_src_port': 8907}
+***
+yahan pe desh ea
+347 7 ----------++++++++++++++++ss
+file download has been forwarded to  347
+same chord 
+ yop
+{u'file_src_ip': u'127.0.0.4', u'file_name': u'12.pdf', u'type': u'GET_CHORD', u'file_id': 579, u'file_src_port': 8907}
+THis is the tcp data i have been jear
+***
+ {u'file_src_ip': u'127.0.0.4', u'file_name': u'12.pdf', u'type': u'GET_CHORD', u'file_id': 579, u'file_src_port': 8907}
+yop
+***
+yahan pe desh ea
+347 7 ----------++++++++++++++++ss
+file download has been forwarded to  347
+same chord 

@@ -1,0 +1,129 @@
+tcp_ip is: 127.0.0.26
+own id:227
+****New Pred is 127.0.0.26:6666
+****New Succ is 127.0.0.26:6666
+multicastSend has beend done
+json is: {"tcp_port": 6666, "type": "BOTH", "tcp_ip": "127.0.0.26"}
+multicastSend has beend done
+json is: {"tcp_port": 6666, "type": "BOTH", "tcp_ip": "127.0.0.26"}
+{u'tcp_port': 6666, u'type': u'PRED', u'tcp_ip': u'127.0.0.24'}
+THis is the tcp data i have been jear
+yop
+{u'tcp_port': 6666, u'type': u'SUCC', u'tcp_ip': u'127.0.0.7'}
+THis is the tcp data i have been jear
+***
+{u'tcp_port': 6666, u'type': u'PRED', u'tcp_ip': u'127.0.0.24'}
+ ***yop
+
+***
+{u'tcp_port': 6666, u'type': u'SUCC', u'tcp_ip': u'127.0.0.7'}
+yahan pe desh ea
+***
+sds incoming id:149 227
+yahan pe desh ea
+****New Pred is 127.0.0.24:6666
+incoming id: sdsdsd 279 227
+****New Succ is 127.0.0.7:6666
+sent ACK for the PRED req from 127.0.0.24:6666
+sent ACK for the SUCC req from 127.0.0.7:6666
+('172.27.22.186', 39673)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.27'}
+('172.27.22.186', 60230)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.28'}
+('172.27.22.186', 43876)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.28'}
+incoming id:577
+{u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.28'}
+multicastSend has beend done
+json is: {"tcp_port": 6666, "type": "PING", "tcp_ip": "127.0.0.26"}
+('172.27.22.186', 54531)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.26'}
+('172.27.22.186', 56203)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.7'}
+incoming id:227
+Recieved Own Multicast
+incoming id:279
+OOPS!
+('172.27.22.186', 46385)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.24'}
+incoming id:149
+OOPS!
+('172.27.22.186', 49563)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.29'}
+('172.27.22.186', 52789)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.30'}
+('172.27.22.186', 47881)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.31'}
+('172.27.22.186', 46535)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.32'}
+('172.27.22.186', 40354)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.33'}
+('172.27.22.186', 60374)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.33'}
+multicastSend has beend done
+json is: {"tcp_port": 6666, "type": "PING", "tcp_ip": "127.0.0.26"}
+('172.27.22.186', 40738)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.26'}
+incoming id:601
+{u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.33'}
+('172.27.22.186', 37648)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.24'}
+incoming id:227
+Recieved Own Multicast
+incoming id:149
+OOPS!
+('172.27.22.186', 43407)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.28'}
+incoming id:577
+OOPS!
+('172.27.22.186', 57291)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.7'}
+incoming id:279
+OOPS!
+('172.27.22.186', 60658)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.34'}
+('172.27.22.186', 57045)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.35'}
+('172.27.22.186', 34596)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.36'}
+('172.27.22.186', 56893)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.37'}
+('172.27.22.186', 59680)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.38'}
+('172.27.22.186', 59146)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.39'}
+('172.27.22.186', 51969)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.40'}
+('172.27.22.186', 35365)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.40'}
+('172.27.22.186', 46618)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.28'}
+incoming id:577
+OOPS!
+('172.27.22.186', 38871)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.33'}
+incoming id:863
+{u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.40'}
+multicastSend has beend done
+json is: {"tcp_port": 6666, "type": "PING", "tcp_ip": "127.0.0.26"}
+('172.27.22.186', 58229)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.7'}
+incoming id:601
+OOPS!
+incoming id:279
+('172.27.22.186', 33015)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.26'}
+OOPS!
+incoming id:227
+ ('172.27.22.186', 38286)  {u'tcp_port': 6666, u'type': u'PING', u'tcp_ip': u'127.0.0.24'}
+incoming id:149
+Recieved Own Multicast
+ OOPS!
+('172.27.22.186', 54882)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.41'}
+('172.27.22.186', 36436)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.42'}
+('172.27.22.186', 41299)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.43'}
+('172.27.22.186', 34879)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.44'}
+('172.27.22.186', 44168)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.45'}
+('172.27.22.186', 49470)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.46'}
+('172.27.22.186', 37234)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.47'}
+('172.27.22.186', 50372)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.48'}
+('172.27.22.186', 49077)  {u'tcp_port': 6666, u'type': u'BOTH', u'tcp_ip': u'127.0.0.49'}
+MULTICAST Group 224.1.1.1
+chord table ---------------------
+0 : {'tcp_port': 6666, 'distance': 52, 'tcp_ip': u'127.0.0.7', 'id': 279}
+1 : {'tcp_port': 6666, 'distance': 52, 'tcp_ip': u'127.0.0.7', 'id': 279}
+2 : {'tcp_port': 6666, 'distance': 52, 'tcp_ip': u'127.0.0.7', 'id': 279}
+3 : {'tcp_port': 6666, 'distance': 52, 'tcp_ip': u'127.0.0.7', 'id': 279}
+4 : {'tcp_port': 6666, 'distance': 52, 'tcp_ip': u'127.0.0.7', 'id': 279}
+5 : {'tcp_port': 6666, 'distance': 52, 'tcp_ip': u'127.0.0.7', 'id': 279}
+6 : {'tcp_port': 6666, 'distance': 350, 'tcp_ip': u'127.0.0.28', 'id': 577}
+7 : {'tcp_port': 6666, 'distance': 350, 'tcp_ip': u'127.0.0.28', 'id': 577}
+8 : {'tcp_port': 6666, 'distance': 350, 'tcp_ip': u'127.0.0.28', 'id': 577}
+9 : {'tcp_port': 6666, 'distance': 636, 'tcp_ip': u'127.0.0.40', 'id': 863}
+ this is the chord_table_iterator ---------------------
+----------------------------------
+Parent chord table ---------------------
+0 : {'tcp_port': 6666, 'distance': 52, 'tcp_ip': u'127.0.0.7', 'id': 279}
+1 : {'tcp_port': 6666, 'distance': 52, 'tcp_ip': u'127.0.0.7', 'id': 279}
+2 : {'tcp_port': 6666, 'distance': 52, 'tcp_ip': u'127.0.0.7', 'id': 279}
+3 : {'tcp_port': 6666, 'distance': 52, 'tcp_ip': u'127.0.0.7', 'id': 279}
+4 : {'tcp_port': 6666, 'distance': 52, 'tcp_ip': u'127.0.0.7', 'id': 279}
+5 : {'tcp_port': 6666, 'distance': 52, 'tcp_ip': u'127.0.0.7', 'id': 279}
+6 : {'tcp_port': 6666, 'distance': 350, 'tcp_ip': u'127.0.0.28', 'id': 577}
+7 : {'tcp_port': 6666, 'distance': 350, 'tcp_ip': u'127.0.0.28', 'id': 577}
+8 : {'tcp_port': 6666, 'distance': 350, 'tcp_ip': u'127.0.0.28', 'id': 577}
+9 : {'tcp_port': 6666, 'distance': 636, 'tcp_ip': u'127.0.0.40', 'id': 863}
+ this is the chord_table_iterator ---------------------
+----------------------------------

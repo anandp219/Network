@@ -14,7 +14,7 @@ TCP_TIMEOUT=2
 TCP_QUEUE_LIMIT=5
 commands =['PUT','PUT_CHORD','GET_CHORD','DELETE','GET','SEARCH']
 tcp_ip='127.0.0.1'
-tcp_port=6667
+tcp_port=8907
 listen_port=6666
 own_id=""
 hash_index=1024
@@ -52,14 +52,15 @@ def process_command(own_id,command,path,file_name):
 		print "Binding....."
 		while flag:
 			try:
+				print "Binding to ",tcp_ip
 				listenerSocket.bind((tcp_ip,tcp_port))
 				flag = False
 			except:
 				"Waiting to bind "
+		print "Bind completed ..."
 		listenerSocket.listen(TCP_QUEUE_LIMIT)
 		connectionSocket, addr =  listenerSocket.accept()
 		print addr
-		print "Bind completed ..."
 		data = ''
 		while True:
 			sen = connectionSocket.recv(BUFSIZE)
@@ -415,15 +416,6 @@ def main():
 	f=True
 	while f:
 		#ip = str(raw_input("ip: "))
-		if tcp_ip == "127.0.0.2":
-			for i in range (1,13):
-				ip="127.0.0."+str(i)
-				port = 6666
-				st=ip+":"+str(port)
-				print hash(st)%1024
-				x=getPredAndSucc(ip,port)
-				print x
-			sys.exit()
 		c = str(raw_input(">"))
 		if ( c== 'QUIT') or c=='quit':
 			f=False

@@ -31,11 +31,11 @@ killall python
 
 
 
+# i=4
+# echo "Spawning 127.0.0.$i"
+# stdbuf -oL python m_recieve.py 127.0.0.$i > output/$i &
+# sleep 1
 i=4
-echo "Spawning 127.0.0.$i"
-stdbuf -oL python m_recieve.py 127.0.0.$i > output/$i &
-sleep 1
-i=1
 echo "Spawning 127.0.0.$i"
 stdbuf -oL python m_recieve.py 127.0.0.$i > output/$i &
 sleep 1
@@ -55,10 +55,10 @@ i=6
 echo "Spawning 127.0.0.$i"
 stdbuf -oL python m_recieve.py 127.0.0.$i > output/$i &
 sleep 1
-# i=1
-# echo "Spawning 127.0.0.$i"
-# stdbuf -oL python m_recieve.py 127.0.0.$i > output/$i &
-# sleep 1
+i=1
+echo "Spawning 127.0.0.$i"
+stdbuf -oL python m_recieve.py 127.0.0.$i > output/$i &
+sleep 1
 # i=9
 # echo "Spawning 127.0.0.$i"
 # stdbuf -oL python m_recieve.py 127.0.0.$i > output/$i &
@@ -83,5 +83,10 @@ sleep 1
 # echo "Spawning 127.0.0.$i"
 # stdbuf -oL python m_recieve.py 127.0.0.$i > output/$i &
 # sleep 1
+# for (( i = 20; i < 50; i++ )); do
+# 	#statements
+# 	echo "Spawning 127.0.0.$i"
+# 	stdbuf -oL python m_recieve.py 127.0.0.$i > output/$i &
+# 	sleep 1
+# done
 echo "Complete!"
-
